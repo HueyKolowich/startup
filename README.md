@@ -9,7 +9,9 @@ Language learning in a classroom simply isn't that effective. This service enabl
 
 ### Design
 
-![Mock](mock.jpg)
+![Mock1](mock1.jpg)
+
+![Mock2](mock2.jpg)
 
 ### Key features
 
