@@ -35,3 +35,13 @@ Language learning in a classroom simply isn't that effective. This service enabl
 - **WebSocket** - As each participant interact with the "I spy" game, all other players see the results 
 - **React** - Application ported to use the React web framework
 
+## HTML deliverable
+
+For this deliverable I built out the structure of my application using HTML.
+
+- **HTML pages** - Four HTML page that represent the ability to login, connect with another user, engage with the activity, and learn about unite.
+- **Links** - The login page automatically links to the waitingroom page. The waitingroom page links to the activity page (which also links back).
+- **Text** - The results are textually represented.
+- **Images** - A user profile image is used to aide with readability on the login page.
+- **DB/Login** - Input box and submit button for login. The results represent data pulled from the database.
+- **WebSocket** - The realtime updating of the "I-Spy" activity pane.
