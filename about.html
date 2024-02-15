@@ -4,9 +4,47 @@
         <meta charset="UTF-8" />
 
         <title>Unite</title>
+
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body class="min-h-screen bg-gray-300">
+        <main class="container mx-auto p-10 max-w-screen-lg">
+            <header class="bg-white rounded shadow p-8">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-4xl font-bold">Unite</h1>
+                    <div>
+                        <a href="index.html" class="mx-2">Home</a>
+                        <a href="about.html" class="mx-2">About</a>
+                    </div>
+                </div>
+            </header>   
+
+            <div class="flex justify-between flex-wrap lg:justify-center">
+                <div class="bg-white rounded shadow p-10 mt-20 w-full lg:w-2/4 mx-auto">
+                    <div class="mb-5 text-center">
+                        <h1 class="text-3xl font-bold mt-8 mb-5">About</h1>
+                    </div>
+
+                    <p>
+                        This service enables you to develop a second language 
+                        by providing you with the most powerful resource at your disposal... 
+                        real time collaborative learning with native speakers! 
+                        Two language learners will be connected through video conferencing 
+                        software and a shared activity workspace and there they will 
+                        be able to give each other real-time feedback as they participate 
+                        in SLA tasks.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded shadow p-10 w-full mt-20">
+                    <a href="https://github.com/HueyKolowich/startup">Github</a>
+                </div>
+            </div>
+        </main>
+    </body>
+
+    <!-- <body>
         <header>
             <h1>Unite</h1>
 
@@ -33,5 +71,5 @@
         <footer>
             <a href="https://github.com/HueyKolowich/startup">Github</a>
         </footer>
-    </body>
+    </body> -->
 </html>
