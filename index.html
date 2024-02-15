@@ -4,35 +4,45 @@
         <meta charset="UTF-8" />
 
         <title>Unite</title>
+
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     </head>
 
-    <body>
-        <header>
-            <h1>Unite</h1>
+    <body class="min-h-screen bg-gray-300">
+        <main class="container mx-auto p-10 max-w-screen-lg">
+            <header class="bg-white rounded shadow p-8">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-4xl font-bold">Unite</h1>
+                    <div>
+                        <a href="index.html" class="mx-2">Home</a>
+                        <a href="about.html" class="mx-2">About</a>
+                    </div>
+                </div>
+            </header>   
 
-            <nav>
-                <menu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                </menu>
-            </nav>
-        </header>
+            <div class="flex justify-between flex-wrap lg:justify-center">
+                <div class="bg-white rounded shadow p-10 mt-20 w-full lg:w-2/4 mx-auto">
+                    <div class="mb-5 text-center">
+                        <h1 class="text-3xl font-bold mt-8 mb-5">Welcome</h1>
+                    </div>
+                    <div class="mb-5 flex justify-center">
+                        <img src="user-profile-icon.jpeg" alt="User Profile">
+                    </div>
+                    <div class="mb-5 text-center">
+                        <form method="get" action="waitingroom.html" class="my-5">
+                            <input type="text" id="name" placeholder="Your name here" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb=5" />
+                            <button type="submit" class="text-white font-bold bg-gray-500 
+                            hover:bg-gray-300 py-2 px-4 rounded mt-5">
+                                Login
+                            </button>
+                        </form>
+                    </div>
+                </div>
 
-        <main>
-            <h1>Welcome</h1>
-
-            <img src="user-profile-icon.jpeg" alt="User Profile">
-
-            <form method="get" action="waitingroom.html">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Your name here" />
-                <button type="submit">Login</button>
-            </form>
-
+                <div class="bg-white rounded shadow p-10 w-full mt-20">
+                    <a href="https://github.com/HueyKolowich/startup">Github</a>
+                </div>
+            </div>
         </main>
-
-        <footer>
-            <a href="https://github.com/HueyKolowich/startup">Github</a>
-        </footer>
     </body>
 </html>
