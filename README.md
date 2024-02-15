@@ -45,3 +45,14 @@ For this deliverable I built out the structure of my application using HTML.
 - **Images** - A user profile image is used to aide with readability on the login page.
 - **DB/Login** - Input box and submit button for login. The results represent data pulled from the database.
 - **WebSocket** - The realtime updating of the "I-Spy" activity pane.
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body**
+- **Navigation elements** - Formatted to the right side of the header bar.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices.
+- **Application elements** - Used good contrast and whitespace.
+- **Application text content** - Consistent fonts.
+- **Application images** - User profile icon and I-spy image have been added and styled.
