@@ -4,9 +4,31 @@
         <meta charset="UTF-8" />
 
         <title>Unite</title>
+
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body class="min-h-screen bg-gray-300">
+        <main class="container mx-auto p-10 max-w-screen-lg">
+            <header class="bg-white rounded shadow p-8">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-4xl font-bold">Unite</h1>
+                    <div>
+                        <a href="index.html" class="mx-2">Home</a>
+                        <a href="about.html" class="mx-2">About</a>
+                    </div>
+                </div>
+            </header>   
+
+            <div class="flex justify-between flex-wrap lg:justify-center">
+                <div class="bg-white rounded shadow p-10 w-full mt-20">
+                    <a href="https://github.com/HueyKolowich/startup">Github</a>
+                </div>
+            </div>
+        </main>
+    </body>
+
+    <!-- <body>
         <header>
             <h1>Unite</h1>
 
@@ -40,5 +62,5 @@
         <footer>
             <a href="https://github.com/HueyKolowich/startup">Github</a>
         </footer>
-    </body>
+    </body> -->
 </html>
