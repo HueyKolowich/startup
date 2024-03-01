@@ -1,4 +1,5 @@
 const localParticipantVideoContainer = document.getElementById("localParticipantVideoContainer");
+const foreignParticipantVideoContainer = document.getElementById("foreignParticipantVideoContainer");
 const tempAuthToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiI2OGMwNDNiOC0wNmI0LTRhN2YtYWEwMC1lNGFkZGM5YTY3MDEiLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTcwOTI3MTM0OSwiZXhwIjoxNzA5ODc2MTQ5fQ.6IdajDtfwJ_ZYcI0LXMUd_Ba5qiGtxDotj6GHM0uR60";
 
 let participants = [];
@@ -39,8 +40,8 @@ meeting.on("participant-joined", (participant) => {
         setTrack(stream, audioElement, participant, (isLocal = false));
     });
 
-    localParticipantVideoContainer.appendChild(videoElement);
-    localParticipantVideoContainer.appendChild(audioElement);
+    foreignParticipantVideoContainer.appendChild(videoElement);
+    foreignParticipantVideoContainer.appendChild(audioElement);
 });
 
 // participants left
