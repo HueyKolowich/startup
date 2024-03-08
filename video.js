@@ -11,16 +11,14 @@ let remoteParticipantId = "";
 window.VideoSDK.config(tempAuthToken);
 
 meeting = window.VideoSDK.initMeeting({
-    meetingId: "9rnr-tf27-4suk", // required
-    name: "Huey's Org", // required
-    micEnabled: true, // optional, default: true
-    webcamEnabled: true, // optional, default: true
+    meetingId: "9rnr-tf27-4suk",
+    name: "Huey's Org",
+    micEnabled: true,
+    webcamEnabled: true,
 });
 
-// creating local participant
 createLocalParticipant();
 
-// setting local participant stream
 meeting.localParticipant.on("stream-enabled", (stream) => {
     setTrack(
         stream,
@@ -30,7 +28,6 @@ meeting.localParticipant.on("stream-enabled", (stream) => {
     );
 });
 
-// other participants
 meeting.on("participant-joined", (participant) => {
     let videoElement = createVideoElement(participant.id);
     let audioElement = createAudioElement(participant.id);
@@ -44,7 +41,6 @@ meeting.on("participant-joined", (participant) => {
     foreignParticipantVideoContainer.appendChild(audioElement);
 });
 
-// participants left
 meeting.on("participant-left", (participant) => {
     let vElement = document.getElementById(`v-${participant.id}`);
     vElement.parentNode.removeChild(vElement);
@@ -52,13 +48,11 @@ meeting.on("participant-left", (participant) => {
     let aElement = document.getElementById(`a-${participant.id}`);
     aElement.parentNode.removeChild(aElement);
 
-    //remove it from participant list participantId;
     document.getElementById(`p-${participant.id}`).remove();
 });
 
 meeting.join();
 
-// creating video element
 function createVideoElement(pId) {
     let videoElement = document.createElement("video");
     videoElement.classList.add("video-frame");
@@ -68,7 +62,6 @@ function createVideoElement(pId) {
     return videoElement;
 }
 
-// creating audio element
 function createAudioElement(pId) {
     let audioElement = document.createElement("audio");
     audioElement.setAttribute("id", `a-${pId}`);
@@ -78,13 +71,11 @@ function createAudioElement(pId) {
     return audioElement;
 }
 
-// creating local participant
 function createLocalParticipant() {
     localParticipant = createVideoElement(meeting.localParticipant.id);
     localParticipantVideoContainer.appendChild(localParticipant);
 }
 
-// setting media track
 function setTrack(stream, audioElement, participant, isLocal) {
     if (stream.kind == "video") {
         const mediaStream = new MediaStream();
