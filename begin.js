@@ -1,3 +1,3 @@
 function beginActivity() {
-   window.location.href("");
+   window.location.href = "activity.html";
 }
