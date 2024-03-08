@@ -2,7 +2,8 @@ function login() {
     const nameElement = document.querySelector("#name");
     
     if (nameElement.value) {
-        window.location.href = "waitingroom.html";
+      localStorage.setItem("name", nameElement.value);
+      window.location.href = "waitingroom.html";
     } else {
         const loginButtonElement = document.querySelector("#login");
 
