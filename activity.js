@@ -4,6 +4,7 @@ class Activity {
     turnIndicator;
     thisTeamNameElement;
     thisTeamScoreElement;
+    otherTeamScoreElement;
 
     constructor() {
         this.thisTeamNameElement = document.querySelector("#thisTeamNameElement");
@@ -11,6 +12,9 @@ class Activity {
 
         this.thisTeamScoreElement = document.querySelector("#thisTeamScoreElement");
         this.thisTeamScoreElement.textContent = 0;
+
+        this.otherTeamScoreElement = document.querySelector("#otherTeamScoreElement");
+        this.otherTeamScoreElement.textContent = 0;
 
         this.turnIndicator = document.querySelector("#turnIndicator");
 
@@ -54,12 +58,29 @@ function guessAnswer(canvas, event) {
         activity.turn = "SET"
         activity.turnIndicator.textContent = "SET";
 
-        activity.thisTeamScoreElement.textContent = parseInt(activity.thisTeamScoreElement.textContent) + 1;
+        updateScore(activity.thisTeamScoreElement);
+    }
+}
+
+function updateScore(teamScoreElement) {
+    teamScoreElement.textContent = parseInt(teamScoreElement.textContent) + 1;
+
+    const thisTeamPositionElement = document.querySelector('#thisTeamPositionElement');
+    const otherTeamPositionElement = document.querySelector('#otherTeamPositionElement');
+
+    if (parseInt(activity.thisTeamScoreElement.textContent) > parseInt(activity.otherTeamScoreElement.textContent)) {
+        thisTeamPositionElement.textContent = 1;
+        otherTeamPositionElement.textContent = 2;
+    } else if (parseInt(activity.thisTeamScoreElement.textContent) === parseInt(activity.otherTeamScoreElement.textContent)) {
+        thisTeamPositionElement.textContent = 1;
+        otherTeamPositionElement.textContent = 1;
+    } else {
+        thisTeamPositionElement.textContent = 2;
+        otherTeamPositionElement.textContent = 1;
     }
 }
 
 // Simulate team scores that will come over WebSocket
 setInterval(() => {
-    const otherTeamScoreElement = document.querySelector("#otherTeamScoreElement");
-    otherTeamScoreElement.textContent = parseInt(otherTeamScoreElement.textContent) + 1
+    updateScore(activity.otherTeamScoreElement);
   }, 5000);
