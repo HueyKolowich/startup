@@ -24,8 +24,8 @@ boto3_bedrock = bedrock.get_bedrock_client(
 
 ####
 
-prompt = "A tall individual with black hair rousing a shorter man who is asleep on the couch by dousing water onto his face."
-# negative_prompts = "poorly rendered, poor background details"
+prompt = "A language classroom with a brazilian flag, a teacher, many desks, and a whiteboard"
+negative_prompts = "poorly rendered, poor background details"
 
 # Create payload
 body = json.dumps(
@@ -33,7 +33,7 @@ body = json.dumps(
         "taskType": "TEXT_IMAGE",
         "textToImageParams": {
             "text": prompt,                    # Required
-            # "negativeText": negative_prompts   # Optional
+            "negativeText": negative_prompts   # Optional
         },
         "imageGenerationConfig": {
             "numberOfImages": 1,   # Range: 1 to 5 
