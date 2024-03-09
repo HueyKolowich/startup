@@ -1,11 +1,14 @@
 class Activity {
     canvas;
     turn;
+    turnIndicator;
     thisTeamNameElement;
 
     constructor() {
         this.thisTeamNameElement = document.querySelector("#thisTeamNameElement");
         this.thisTeamNameElement.textContent = this.getTeamName();
+
+        this.turnIndicator = document.querySelector("#turnIndicator");
 
         this.canvas = document.querySelector("canvas");
         this.canvas.addEventListener("mousedown", (event) => {
@@ -31,10 +34,11 @@ function setAnswer(canvas, event) {
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
-    console.log("Coordinate x: " + x,
-        "Coordinate y: " + y);
+
     localStorage.setItem("x", x);
     localStorage.setItem("y", y);
+
+    activity.turnIndicator.textContent = "GUESS";
 }
 
 function guessAnswer(canvas, event) {
@@ -43,7 +47,7 @@ function guessAnswer(canvas, event) {
     let y = event.clientY - rect.top;
 
     if (((parseInt(localStorage.getItem("x")) - x) < 5) && ((parseInt(localStorage.getItem("y")) - y) < 5)) {
-        console.log("hit");
         activity.turn = "SET"
+        activity.turnIndicator.textContent = "SET";
     }
 }
