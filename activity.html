@@ -28,12 +28,18 @@
                         </div>
                     </div>
 
-                    <div class="relative bg-white rounded shadow p-10 mt-20 w-full lg:w-2/4 mx-auto">
-                        <div class="mb-5 flex justify-center">
-                            <img src="I_Spy.jpeg" alt="I Spy">
-                        </div>
-                        <div class="absolute inset-0 bg-red-500 opacity-0 hover:opacity-50 transition-opacity duration-300 cursor-pointer">
-                        </div>
+                    <div class="relative bg-white rounded shadow p-10 mt-20 w-512 h-512 lg:w-2/4 mx-auto">
+                        <canvas id="myCanvas" class="w-full h-full" width="512" height="512"></canvas>
+                        <script>
+                            var canvas = document.getElementById('myCanvas');
+                            var ctx = canvas.getContext('2d');
+
+                            var img = new Image();
+                            img.onload = function() {
+                                ctx.drawImage(img, 0, 0);
+                            };
+                            img.src = 'test.png';
+                        </script>
                     </div>
                 </div>
                 
