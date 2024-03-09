@@ -56,3 +56,13 @@ For this deliverable I properly styled the application into its final appearance
 - **Application elements** - Used good contrast and whitespace.
 - **Application text content** - Consistent fonts.
 - **Application images** - User profile icon and I-spy image have been added and styled.
+
+## JavaScript deliverable
+
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+
+- **login** - Login only works when a name has been provided, the window is redirected to the waitingroom page.
+- **database** - Usernames and authTokens to use the api calls with be stored in the DB, currently authTokens are hard-coded into the
+scripts and usernames are just set into localstorage.
+- **WebSocket** - I used the setInterval function to periodically increase the other team's score. This will be replaced with WebSocket data later.
+- **application logic** - The I-Spy activity pane is now able to be acted upon by two turn phases: set and guess. User on phase set will select and object being displayed on the canvas and control switches over to the guess phase (which in the future will be played by a different user). They then guess by clicking on the canvas until they locate the correct object that was set. Upon a correct guess, score is updated and the phase returns to set. Position rankings dynamically updated based on the current score. In the waiting room, an api call to videosdk is made for the video confrencing features of the site.
