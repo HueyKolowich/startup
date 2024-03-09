@@ -3,10 +3,14 @@ class Activity {
     turn;
     turnIndicator;
     thisTeamNameElement;
+    thisTeamScoreElement;
 
     constructor() {
         this.thisTeamNameElement = document.querySelector("#thisTeamNameElement");
         this.thisTeamNameElement.textContent = this.getTeamName();
+
+        this.thisTeamScoreElement = document.querySelector("#thisTeamScoreElement");
+        this.thisTeamScoreElement.textContent = 0;
 
         this.turnIndicator = document.querySelector("#turnIndicator");
 
@@ -46,17 +50,10 @@ function guessAnswer(canvas, event) {
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
 
-
-    console.log("Guessing: ");
-    console.log(parseInt(localStorage.getItem("x")));
-    console.log(x);
-    console.log(parseInt(localStorage.getItem("x")) - x)
-    console.log(parseInt(localStorage.getItem("y")));
-    console.log(y);
-    console.log(parseInt(localStorage.getItem("x")) - y)
-
     if ((Math.abs(parseInt(localStorage.getItem("x")) - x) < 15) && (Math.abs(parseInt(localStorage.getItem("y")) - y) < 15)) {
         activity.turn = "SET"
         activity.turnIndicator.textContent = "SET";
+
+        activity.thisTeamScoreElement.textContent = parseInt(activity.thisTeamScoreElement.textContent) + 1;
     }
 }
