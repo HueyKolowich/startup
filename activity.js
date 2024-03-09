@@ -57,3 +57,9 @@ function guessAnswer(canvas, event) {
         activity.thisTeamScoreElement.textContent = parseInt(activity.thisTeamScoreElement.textContent) + 1;
     }
 }
+
+// Simulate team scores that will come over WebSocket
+setInterval(() => {
+    const otherTeamScoreElement = document.querySelector("#otherTeamScoreElement");
+    otherTeamScoreElement.textContent = parseInt(otherTeamScoreElement.textContent) + 1
+  }, 5000);
