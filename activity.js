@@ -46,7 +46,16 @@ function guessAnswer(canvas, event) {
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
 
-    if (((parseInt(localStorage.getItem("x")) - x) < 5) && ((parseInt(localStorage.getItem("y")) - y) < 5)) {
+
+    console.log("Guessing: ");
+    console.log(parseInt(localStorage.getItem("x")));
+    console.log(x);
+    console.log(parseInt(localStorage.getItem("x")) - x)
+    console.log(parseInt(localStorage.getItem("y")));
+    console.log(y);
+    console.log(parseInt(localStorage.getItem("x")) - y)
+
+    if ((Math.abs(parseInt(localStorage.getItem("x")) - x) < 15) && (Math.abs(parseInt(localStorage.getItem("y")) - y) < 15)) {
         activity.turn = "SET"
         activity.turnIndicator.textContent = "SET";
     }
